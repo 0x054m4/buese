@@ -107,6 +107,10 @@ public class Borrow {
         Date currentDate = new Date();
         return currentDate.after(dueDate);
     }
+    
+//    public void confirmBorrowingProcess(){
+//        return;
+//    }
 
     enum BorrowStatus {
         ACTIVE,

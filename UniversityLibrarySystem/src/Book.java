@@ -78,6 +78,20 @@ public class Book {
         return borrow;
     }
 
+//    public Book fetchBookData(String name){
+//        return Book;
+//    }
+    
+//    public boolean checkBookAvaialabilty(String name){
+//        return; 
+//    }
+    
+//    public boolean recordBorrowingTransaction(int ISBN){
+//        return;
+//    }
+    
+    
+    
     public void addBook() {
 
     }

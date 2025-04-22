@@ -104,7 +104,7 @@ public class StudentSignUp extends javax.swing.JFrame {
 
         Studentloginbtn.setBackground(new java.awt.Color(51, 153, 255));
         Studentloginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        Studentloginbtn.setText("Login");
+        Studentloginbtn.setText("Sign Up");
         Studentloginbtn.setBorder(null);
         Studentloginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

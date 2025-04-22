@@ -40,6 +40,7 @@ public class StudentLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         StudenPasswordLoginField = new javax.swing.JPasswordField();
         Studentloginbtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         StudentLoginBtn.setText("Login");
         StudentLoginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +51,7 @@ public class StudentLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImages(null);
         setPreferredSize(new java.awt.Dimension(844, 723));
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -63,7 +65,7 @@ public class StudentLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,9 +75,12 @@ public class StudentLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Login");
+        getContentPane().add(jLabel2, java.awt.BorderLayout.PAGE_START);
 
         StudentLoginEmailField.setToolTipText("");
         StudentLoginEmailField.setOpaque(true);
@@ -84,11 +89,15 @@ public class StudentLogin extends javax.swing.JFrame {
                 StudentLoginEmailFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(StudentLoginEmailField, java.awt.BorderLayout.PAGE_END);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Email");
+        getContentPane().add(jLabel3, java.awt.BorderLayout.LINE_END);
 
         jLabel4.setText("Password");
+        getContentPane().add(jLabel4, java.awt.BorderLayout.LINE_START);
+        getContentPane().add(StudenPasswordLoginField, java.awt.BorderLayout.CENTER);
 
         Studentloginbtn.setBackground(new java.awt.Color(51, 153, 255));
         Studentloginbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,53 +108,12 @@ public class StudentLogin extends javax.swing.JFrame {
                 StudentloginbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(Studentloginbtn, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(161, 161, 161))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(304, 304, 304))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(StudenPasswordLoginField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap()))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(StudentLoginEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(71, 71, 71)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel2)
-                .addGap(99, 99, 99)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(StudentLoginEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(StudenPasswordLoginField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel5.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel5.setText("Don't have an account? Sign up ");
+        getContentPane().add(jLabel5, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +174,7 @@ public class StudentLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

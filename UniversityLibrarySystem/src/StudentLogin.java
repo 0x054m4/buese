@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import java.awt.Font;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,6 +18,8 @@ public class StudentLogin extends javax.swing.JFrame {
      */
     public StudentLogin() {
         initComponents();
+   
+
     }
 
     /**
@@ -29,11 +35,11 @@ public class StudentLogin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        StudentLoginEmailField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        loginGooglebtn = new javax.swing.JButton();
+        StudenPasswordLoginField = new javax.swing.JPasswordField();
+        Studentloginbtn = new javax.swing.JButton();
 
         StudentLoginBtn.setText("Login");
         StudentLoginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +49,7 @@ public class StudentLogin extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(844, 723));
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -54,28 +61,27 @@ public class StudentLogin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(221, 221, 221)
+                .addGap(207, 207, 207)
                 .addComponent(jLabel1)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Login");
 
-        jTextField1.setForeground(new java.awt.Color(102, 255, 255));
-        jTextField1.setToolTipText("");
-        jTextField1.setOpaque(true);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        StudentLoginEmailField.setToolTipText("");
+        StudentLoginEmailField.setOpaque(true);
+        StudentLoginEmailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                StudentLoginEmailFieldActionPerformed(evt);
             }
         });
 
@@ -84,12 +90,13 @@ public class StudentLogin extends javax.swing.JFrame {
 
         jLabel4.setText("Password");
 
-        loginGooglebtn.setBackground(new java.awt.Color(51, 153, 255));
-        loginGooglebtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginGooglebtn.setText("Login");
-        loginGooglebtn.addActionListener(new java.awt.event.ActionListener() {
+        Studentloginbtn.setBackground(new java.awt.Color(51, 153, 255));
+        Studentloginbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Studentloginbtn.setText("Login");
+        Studentloginbtn.setBorder(null);
+        Studentloginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginGooglebtnActionPerformed(evt);
+                StudentloginbtnActionPerformed(evt);
             }
         });
 
@@ -112,14 +119,14 @@ public class StudentLogin extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(StudenPasswordLoginField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap()))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(StudentLoginEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(71, 71, 71)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(loginGooglebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92))))
+                        .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(91, 91, 91))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,31 +136,31 @@ public class StudentLogin extends javax.swing.JFrame {
                 .addGap(99, 99, 99)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(StudentLoginEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(loginGooglebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(StudenPasswordLoginField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(257, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void StudentLoginEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentLoginEmailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_StudentLoginEmailFieldActionPerformed
 
     private void StudentLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentLoginBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StudentLoginBtnActionPerformed
 
-    private void loginGooglebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginGooglebtnActionPerformed
+    private void StudentloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentloginbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginGooglebtnActionPerformed
+    }//GEN-LAST:event_StudentloginbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,14 +198,14 @@ public class StudentLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField StudenPasswordLoginField;
     private javax.swing.JButton StudentLoginBtn;
+    private javax.swing.JTextField StudentLoginEmailField;
+    private javax.swing.JButton Studentloginbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton loginGooglebtn;
     // End of variables declaration//GEN-END:variables
 }

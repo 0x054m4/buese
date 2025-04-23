@@ -1,4 +1,3 @@
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class User {
-
     private int userID;
     private String name;
     private String email;
@@ -77,6 +75,7 @@ public class User {
     public enum Status {
         ACTIVE, DISABLED
     }
+<<<<<<< HEAD
 
     public void login() {
 
@@ -96,4 +95,6 @@ public class User {
 
         }
     }
+=======
+>>>>>>> 98c0990f957ee17449e9f10fec4fcc625212f356
 }

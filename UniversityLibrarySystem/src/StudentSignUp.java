@@ -38,6 +38,7 @@ public class StudentSignUp extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         Studentloginbtn = new javax.swing.JButton();
         LoginLabel = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -81,7 +82,6 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Password");
 
-        jTextField1.setForeground(new java.awt.Color(102, 255, 255));
         jTextField1.setToolTipText("");
         jTextField1.setOpaque(true);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,6 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Name");
 
-        jTextField3.setForeground(new java.awt.Color(102, 255, 255));
         jTextField3.setToolTipText("");
         jTextField3.setOpaque(true);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -117,13 +116,15 @@ public class StudentSignUp extends javax.swing.JFrame {
 
         LoginLabel.setBackground(new java.awt.Color(204, 255, 255));
         LoginLabel.setForeground(new java.awt.Color(51, 153, 255));
-        LoginLabel.setText("Already a User? Login");
+        LoginLabel.setText("Login");
         LoginLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LoginLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginLabelMouseClicked(evt);
             }
         });
+
+        jLabel6.setText("Already a User?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,8 +156,10 @@ public class StudentSignUp extends javax.swing.JFrame {
                         .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(84, 84, 84))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LoginLabel)
-                        .addGap(139, 139, 139))))
+                        .addGap(147, 147, 147))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +181,9 @@ public class StudentSignUp extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LoginLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LoginLabel)
+                    .addComponent(jLabel6))
                 .addGap(0, 156, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -247,6 +252,7 @@ public class StudentSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

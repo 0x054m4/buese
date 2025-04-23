@@ -47,26 +47,37 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="87" pref="87" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="StudentLoginEmailField" min="-2" pref="265" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="StudenPasswordLoginField" min="-2" pref="265" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                      <Component id="Studentloginbtn" min="-2" pref="229" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="47" pref="47" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="SignUpLink" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="87" pref="87" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StudentLoginEmailField" min="-2" pref="265" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StudenPasswordLoginField" min="-2" pref="265" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="Studentloginbtn" min="-2" pref="229" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="85" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,7 +87,7 @@
           <Group type="102" attributes="0">
               <EmptySpace min="86" pref="86" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="99" pref="99" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Component id="StudentLoginEmailField" min="-2" pref="41" max="-2" attributes="0"/>
@@ -84,10 +95,13 @@
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Component id="StudenPasswordLoginField" min="-2" pref="41" max="-2" attributes="0"/>
-              <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="Studentloginbtn" min="-2" pref="39" max="-2" attributes="0"/>
-              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-              <Component id="SignUpLink" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="SignUpLink" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -190,7 +204,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="33" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Don&apos;t have an account? Sign up "/>
+        <Property name="text" type="java.lang.String" value="Sign up "/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
@@ -198,6 +212,11 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SignUpLinkMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Don&apos;t have an account?"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

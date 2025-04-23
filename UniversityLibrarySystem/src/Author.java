@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Author {
     private String name;
     private String bio;
-    private int id;
+    private int authorId;
     private ArrayList<Book> books;
 
     public Author(String name, String bio, ArrayList<Book> books) {
@@ -12,8 +12,8 @@ public class Author {
         this.books = books;
     }
 
-    public Author(int id) {
-        this.id = id;
+    public Author(int authorId) {
+        this.authorId = authorId;
     }    
 
     public void setName(String name) {
@@ -24,8 +24,8 @@ public class Author {
         this.bio = bio;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int authorId) {
+        this.authorId = authorId;
     }
 
     public void setBooks(ArrayList<Book> books) {
@@ -41,7 +41,7 @@ public class Author {
     }
 
     public int getId() {
-        return id;
+        return authorId;
     }
 
     public ArrayList<Book> getBooks() {

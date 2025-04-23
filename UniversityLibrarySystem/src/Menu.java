@@ -1,11 +1,14 @@
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Omayr
@@ -17,6 +20,10 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        MenuRoleComboxBox.setBorder(BorderFactory.createEmptyBorder());
+        MenuRoleComboxBox.setBackground(Color.WHITE);
+      
     }
 
     /**
@@ -42,6 +49,8 @@ public class Menu extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -54,7 +63,10 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user (2).png"))); // NOI18N
 
+        MenuRoleComboxBox.setBackground(new java.awt.Color(51, 153, 255));
+        MenuRoleComboxBox.setForeground(new java.awt.Color(255, 255, 255));
         MenuRoleComboxBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select User Type...", "Student", "Librarian", "Admin" }));
+        MenuRoleComboxBox.setBorder(null);
         MenuRoleComboxBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuRoleComboxBoxActionPerformed(evt);
@@ -167,30 +179,29 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuRoleComboxBoxActionPerformed
 
     private void MenuConfirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuConfirmBtnActionPerformed
-        
 
-    String selectedAction = (String)MenuRoleComboxBox.getSelectedItem();
+        String selectedAction = (String) MenuRoleComboxBox.getSelectedItem();
 
-    switch (selectedAction) {
-        case "Student":
-            this.dispose();
-            new StudentLogin().setVisible(true);
-            break;
+        switch (selectedAction) {
+            case "Student":
+                this.dispose();
+                new StudentLogin().setVisible(true);
+                break;
 
-        case "Admin":
-            this.dispose();
-           new AdminLogin().setVisible(true);
-            break;
+            case "Admin":
+                this.dispose();
+                new AdminLogin().setVisible(true);
+                break;
 
-        case "Librarian":
-           this.dispose(); 
-           new LibrarianLogin().setVisible(true);
-            break;
+            case "Librarian":
+                this.dispose();
+                new LibrarianLogin().setVisible(true);
+                break;
 
-        default:
-            JOptionPane.showMessageDialog(this, "Please select a Role");
-            break;
-    }
+            default:
+                JOptionPane.showMessageDialog(this, "Please select a Role");
+                break;
+        }
     }//GEN-LAST:event_MenuConfirmBtnActionPerformed
 
     /**

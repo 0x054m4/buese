@@ -5,15 +5,20 @@
         <group>
             <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentSignUp.java</file>
             <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentLogin.java</file>
-            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/User.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Menu.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/AdminLogin.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/LibrarianLogin.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/App.java</file>
         </group>
         <group>
             <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentSignUp.java</file>
             <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentLogin.java</file>
-            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/User.java</file>
             <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Menu.java</file>
-            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Borrow.java</file>
-            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Author.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/AdminLogin.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/LibrarianLogin.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/App.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Student.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/User.java</file>
         </group>
     </open-files>
 </project-private>

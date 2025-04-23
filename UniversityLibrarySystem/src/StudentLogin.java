@@ -18,8 +18,7 @@ public class StudentLogin extends javax.swing.JFrame {
      */
     public StudentLogin() {
         initComponents();
-   
-
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -108,6 +107,11 @@ public class StudentLogin extends javax.swing.JFrame {
         SignUpLink.setForeground(new java.awt.Color(51, 153, 255));
         SignUpLink.setText("Don't have an account? Sign up ");
         SignUpLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignUpLink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignUpLinkMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,6 +171,11 @@ public class StudentLogin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_StudentloginbtnActionPerformed
 
+    private void SignUpLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpLinkMouseClicked
+this.dispose(); // Close the current login form
+    new StudentSignUp().setVisible(true); // Open the sign-up form
+    }//GEN-LAST:event_SignUpLinkMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -202,11 +211,8 @@ public class StudentLogin extends javax.swing.JFrame {
         });
     }
 
-    public void SignUpLink(java.awt.event.MouseEvent evt){
-        this.dispose();
-        new StudentSignUp().setVisible(true);
-     
-    }
+    
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel SignUpLink;
     private javax.swing.JPasswordField StudenPasswordLoginField;

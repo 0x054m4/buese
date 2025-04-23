@@ -54,6 +54,7 @@ public class StudentLogin extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImages(null);
         setPreferredSize(new java.awt.Dimension(844, 723));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 

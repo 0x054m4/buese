@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Book {
     private int ISBN;
-    private String name;
+    private String title;
     private Status status;
     private String category;
     private ArrayList<Author> author;
@@ -13,8 +13,9 @@ public class Book {
         this.ISBN = ISBN;
     }
 
-    public Book(String name, Status status, String category, ArrayList<Author> author, Location location, Borrow borrow) {
-        this.name = name;
+    public Book(String title, Status status, String category, ArrayList<Author> author, Location location,
+            Borrow borrow) {
+        this.title = title;
         this.status = status;
         this.category = category;
         this.author = author;
@@ -30,12 +31,12 @@ public class Book {
         return ISBN;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void settitle(String title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public String gettitle() {
+        return title;
     }
 
     public void setStatus(Status status) {
@@ -53,7 +54,7 @@ public class Book {
     public String getCategory() {
         return category;
     }
-    
+
     public void setAuthor(ArrayList<Author> author) {
         this.author = author;
     }
@@ -78,20 +79,18 @@ public class Book {
         return borrow;
     }
 
-//    public Book fetchBookData(String name){
-//        return Book;
-//    }
-    
-//    public boolean checkBookAvaialabilty(String name){
-//        return; 
-//    }
-    
-//    public boolean recordBorrowingTransaction(int ISBN){
-//        return;
-//    }
-    
-    
-    
+    // public Book fetchBookData(String title){
+    // return Book;
+    // }
+
+    // public boolean checkBookAvaialabilty(String title){
+    // return;
+    // }
+
+    // public boolean recordBorrowingTransaction(int ISBN){
+    // return;
+    // }
+
     public void addBook() {
 
     }

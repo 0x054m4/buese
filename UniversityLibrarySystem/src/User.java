@@ -1,4 +1,3 @@
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class User {
-
     private int userID;
     private String name;
     private String email;
@@ -77,22 +75,4 @@ public class User {
     public enum Status {
         ACTIVE, DISABLED
     }
-
-    public void login() {
-
-    }
-
-    public void signUp() {
-        String connectionURL = "jdbc:derby://localhost:1527/group51";
-        try {
-            Connection conn = DriverManager.getConnection(connectionURL, "bue", "bue");
-            Statement st = conn.createStatement();
-            String sql = "INSERT INTO STUDENT (ID, NAME) VALUES (gggg, 'demo3')";
-            st.executeUpdate(sql);
-            st.close();
-            conn.close();
-        } catch (SQLException ex) {
-            System.out.println("Connect failed ! ");
-
-        }
-    }
+}

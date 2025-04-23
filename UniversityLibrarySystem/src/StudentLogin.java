@@ -41,7 +41,7 @@ public class StudentLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         StudenPasswordLoginField = new javax.swing.JPasswordField();
         Studentloginbtn = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        SignUpLink = new javax.swing.JLabel();
 
         StudentLoginBtn.setText("Login");
         StudentLoginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +74,7 @@ public class StudentLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(207, 207, 207)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -104,9 +104,10 @@ public class StudentLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel5.setText("Don't have an account? Sign up ");
+        SignUpLink.setBackground(new java.awt.Color(204, 255, 255));
+        SignUpLink.setForeground(new java.awt.Color(51, 153, 255));
+        SignUpLink.setText("Don't have an account? Sign up ");
+        SignUpLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,7 +129,7 @@ public class StudentLogin extends javax.swing.JFrame {
                         .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jLabel5)))
+                        .addComponent(SignUpLink)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,7 +149,7 @@ public class StudentLogin extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5))
+                .addComponent(SignUpLink))
         );
 
         pack();
@@ -163,7 +164,7 @@ public class StudentLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_StudentLoginBtnActionPerformed
 
     private void StudentloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentloginbtnActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_StudentloginbtnActionPerformed
 
     /**
@@ -201,7 +202,13 @@ public class StudentLogin extends javax.swing.JFrame {
         });
     }
 
+    public void SignUpLink(java.awt.event.MouseEvent evt){
+        this.dispose();
+        new StudentSignUp().setVisible(true);
+     
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel SignUpLink;
     private javax.swing.JPasswordField StudenPasswordLoginField;
     private javax.swing.JButton StudentLoginBtn;
     private javax.swing.JTextField StudentLoginEmailField;
@@ -210,7 +217,6 @@ public class StudentLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables

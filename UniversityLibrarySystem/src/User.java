@@ -1,9 +1,3 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 public class User {
     private int userID;
     private String name;
@@ -75,4 +69,6 @@ public class User {
     public enum Status {
         ACTIVE, DISABLED
     }
+    
+    
 }

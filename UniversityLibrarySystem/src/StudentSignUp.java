@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -31,11 +34,11 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        SignUpNameField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        SignUpEmailField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        SignUpPasswordField = new javax.swing.JPasswordField();
         Studentloginbtn = new javax.swing.JButton();
         LoginLabel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -82,22 +85,22 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Password");
 
-        jTextField1.setToolTipText("");
-        jTextField1.setOpaque(true);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        SignUpNameField.setToolTipText("");
+        SignUpNameField.setOpaque(true);
+        SignUpNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                SignUpNameFieldActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Name");
 
-        jTextField3.setToolTipText("");
-        jTextField3.setOpaque(true);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        SignUpEmailField.setToolTipText("");
+        SignUpEmailField.setOpaque(true);
+        SignUpEmailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                SignUpEmailFieldActionPerformed(evt);
             }
         });
 
@@ -137,7 +140,7 @@ public class StudentSignUp extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SignUpNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(66, 66, 66))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -148,9 +151,9 @@ public class StudentSignUp extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel4)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                                .addComponent(SignUpEmailField, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                                 .addComponent(jLabel5)
-                                .addComponent(jPasswordField1))
+                                .addComponent(SignUpPasswordField))
                             .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,15 +172,15 @@ public class StudentSignUp extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignUpNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignUpEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignUpPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(Studentloginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -191,16 +194,53 @@ public class StudentSignUp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void SignUpNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_SignUpNameFieldActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void SignUpEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpEmailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
+    }//GEN-LAST:event_SignUpEmailFieldActionPerformed
+ 
     private void StudentloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentloginbtnActionPerformed
-        // TODO add your handling code here:
+        String name = SignUpNameField.getText().trim();
+    String email = SignUpEmailField.getText().trim();
+    String password = new String(SignUpPasswordField.getPassword());
+
+    if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "All fields are required!");
+        return;
+    }
+
+    Student student = new Student(0); // dummy userID
+    boolean success = student.signUp(name, email, password);
+
+    if (success) {
+        JOptionPane.showMessageDialog(this, "Sign up successful!");
+        // Redirect to login or main screen
+    } else {
+        JOptionPane.showMessageDialog(this, "Sign up failed. Please try again.");
+    }
+//        String name = SignUpNameField.getText();
+//        String email = SignUpEmailField.getText();
+//        char[] password1 = SignUpPasswordField.getPassword(); 
+//        String password = String.copyValueOf(password1);
+//        Student s1 = null;
+//        s1.setName(name);
+//        s1.setEmail(email);
+//        s1.setPassword(password);
+//        
+//        s1.signUp(name, email, password);
+//        if (s1!= null)
+//        {
+//            Customer_Info f2 = new Customer_Info(cust);
+//            f2.setVisible(true);
+//            this.dispose();
+//           
+//        }
+        
+//        else
+//            JOptionPane.showMessageDialog(this, "Invalid username or password");
     }//GEN-LAST:event_StudentloginbtnActionPerformed
 
     private void LoginLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginLabelMouseClicked
@@ -245,6 +285,9 @@ public class StudentSignUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LoginLabel;
+    private javax.swing.JTextField SignUpEmailField;
+    private javax.swing.JTextField SignUpNameField;
+    private javax.swing.JPasswordField SignUpPasswordField;
     private javax.swing.JButton Studentloginbtn;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
@@ -254,8 +297,5 @@ public class StudentSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

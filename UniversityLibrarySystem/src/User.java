@@ -18,28 +18,28 @@ public class User {
         this.status = status;
     }
 
-    public int getUserID() {
-        return userID;
-    }
-
     public void setUserID(int userID) {
         this.userID = userID;
     }
-
-    public String getName() {
-        return name;
-    }
+    
+    public int getUserID() {
+        return userID;
+    }    
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+     public String getName() {
+        return name;
     }
-
+   
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getEmail() {
+        return email;
     }
 
     public String getPassword() {

@@ -6,13 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement; 
 
 public class Student extends User{
-    private static int studentCounter = 0;
     private ArrayList<Borrow> borrowList;
 
     public Student(int userID) {
         super(userID);
         this.borrowList = new ArrayList<Borrow>();
-        studentCounter++;
     } 
  
     public Student(String name, String email, String password, String role, Status status, ArrayList<Borrow> borrowList) {
@@ -34,16 +32,18 @@ public class Student extends User{
         try {
             Connection conn = DriverManager.getConnection(connectionURL, "bue", "bue");
             Statement st = conn.createStatement();
-            String sql = "INSERT INTO STUDENT (ID, NAME, EMAIL, PASSWORD, STATUS) VALUES (3, 'demo3', 'fsdfsd', 'fsdfds', 1 )"; 
-//            String sql = String.format("INSERT INTO STUDENT (ID, NAME, EMAIL, PASSWORD, STATUS)"
-//                    + " VALUES (123, '%s', '%s', '%s', 1)", 
-//                    name, email, password);
+            String currID = "SELECT ID FROM STUDENT ORDER BY DESC FETCH FIRST 1 ROWS ONLY";
+            ResultSet rs = st.executeQuery(currID);
+            int nextID = Integer.parseInt(currID);
+            String sql = String.format("INSERT INTO STUDENT (ID, NAME, EMAIL, PASSWORD, STATUS)"
+                    + " VALUES ('%d', '%s', '%s', '%s', TRUE)", 
+                    nextID, name, email, password);
             st.executeUpdate(sql);
             st.close();
             conn.close();
             return true;
         } catch (SQLException ex) {
-            System.out.println("Connect failed ! ");
+            System.out.println("Connect failed ! " + ex.getMessage());
             return false;
         }
     }    

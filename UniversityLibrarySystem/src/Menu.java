@@ -63,8 +63,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user (2).png"))); // NOI18N
 
-        MenuRoleComboxBox.setBackground(new java.awt.Color(51, 153, 255));
-        MenuRoleComboxBox.setForeground(new java.awt.Color(255, 255, 255));
         MenuRoleComboxBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select User Type...", "Student", "Librarian", "Admin" }));
         MenuRoleComboxBox.setBorder(null);
         MenuRoleComboxBox.addActionListener(new java.awt.event.ActionListener() {

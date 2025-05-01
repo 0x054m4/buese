@@ -245,7 +245,7 @@ public class StudentSignUp extends javax.swing.JFrame {
 
     private void LoginLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginLabelMouseClicked
         this.dispose(); // Close the current login form
-        new StudentLogin().setVisible(true); // Open the sign-up form
+        new Login().setVisible(true); // Open the sign-up form
     }//GEN-LAST:event_LoginLabelMouseClicked
 
     /**

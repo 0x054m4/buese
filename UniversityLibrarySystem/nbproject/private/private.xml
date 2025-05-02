@@ -3,18 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/Login.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/StudentView.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/DBManager.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/Student.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/StudentController.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/AdminView.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentView.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/BorrowMaterial.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/UserStatus.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentSignUp.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/ManageStudent.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Admin.java</file>
         </group>
         <group>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/Login.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/StudentView.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/DBManager.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/Student.java</file>
-            <file>file:/D:/Omayr/BUE/Y1/S2/Software%20Engineering%201/Project/Final%20Phase/Code/buese/buese/UniversityLibrarySystem/src/StudentController.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/AdminView.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentView.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/BorrowMaterial.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/UserStatus.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/StudentSignUp.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/ManageStudent.java</file>
+            <file>file:/D:/Git/buese/UniversityLibrarySystem/src/Admin.java</file>
         </group>
     </open-files>
 </project-private>

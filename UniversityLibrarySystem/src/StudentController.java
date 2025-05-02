@@ -8,13 +8,37 @@ import java.sql.DriverManager;
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 import java.sql.Statement; 
+
 /**
  *
  * @author omarh
  */
-public class StudentController {
-    
-    private Student student;
-    
-    
+public class StudentController{
+   
+    Student student;
+    private ArrayList<Borrow> borrowList;
+    private int userID;
+    private String name;
+    private String email;
+    private String password;
+    private String role;
+    private UserStatus.Status status;
+    public StudentController(String name, String email, String password, String role, UserStatus.Status status, ArrayList<Borrow> borrowList) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.status = status;
+        this.borrowList = borrowList;
+        this.student = new Student(name, email, password, role, status, borrowList);
+        student = new Student(name, email, password, role, status, borrowList);
+    }
+    public StudentController(String email, String password) {
+        this.email = email;
+        this.password = password;
+        this.student = new Student(email, password, null, null, null, null);
+    }
+    public boolean login() {
+        return student.login();
+    }
 }

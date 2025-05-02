@@ -13,10 +13,29 @@ public class Student extends User{
         this.borrowList = new ArrayList<Borrow>();
     } 
  
-    public Student(String name, String email, String password, String role, Status status, ArrayList<Borrow> borrowList) {
+    public Student(String name, String email, String password, String role, UserStatus.Status status, ArrayList<Borrow> borrowList) {
         super(name, email, password, role, status);
         this.borrowList = borrowList;
-//        this.userID = studentCounter++;
+    }
+
+    public boolean login(){
+        String q = "SELECT * FROM STUDENT WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
+        final ResultSet res = DBManager.query(q);
+        if(res != null) {
+            try {
+                if (res.next()) {
+                    this.setUserID(res.getInt("ID"));
+                    this.setName(res.getString("NAME"));
+                    this.setEmail(res.getString("EMAIL"));
+                    this.setPassword(res.getString("PASSWORD"));
+                    this.setStatus(UserStatus.Status.valueOf(res.getString("STATUS")));
+                    return true;
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
+        }
+        return false;
     }
     
     public void setBorrowList(ArrayList<Borrow> borrowList) {

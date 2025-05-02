@@ -4,13 +4,13 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private Status status;
+    private UserStatus.Status status;
 
     public User(int userID) {
         this.userID = userID;
     }
 
-    public User(String name, String email, String password, String role, Status status) {
+    public User(String name, String email, String password, String role, UserStatus.Status status) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -58,17 +58,15 @@ public class User {
         this.role = role;
     }
 
-    public Status getStatus() {
+    public UserStatus.Status getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(UserStatus.Status status) {
         this.status = status;
     }
 
-    public enum Status {
-        ACTIVE, DISABLED
-    }
+
     
     
 }

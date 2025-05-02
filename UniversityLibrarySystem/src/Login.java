@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JOptionPane;
@@ -86,6 +87,11 @@ public class Login extends javax.swing.JFrame {
         RoleComboxBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RoleComboxBoxActionPerformed(evt);
+            }
+        });
+        RoleComboxBox.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                RoleComboxBoxPropertyChange(evt);
             }
         });
 
@@ -261,7 +267,6 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_StudentLoginBtnActionPerformed
 
 
-    
     private void StudentloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentloginbtnActionPerformed
         String selectedAction = (String) RoleComboxBox.getSelectedItem();
         switch (selectedAction) {
@@ -309,6 +314,16 @@ public class Login extends javax.swing.JFrame {
     private void RoleComboxBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoleComboxBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RoleComboxBoxActionPerformed
+
+    private void RoleComboxBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_RoleComboxBoxPropertyChange
+        String selectedAction = (String) RoleComboxBox.getSelectedItem();
+        if (selectedAction == "Student") {
+            jPanel5.setVisible(true);
+        } else {
+            jPanel5.setVisible(false);
+        }
+
+    }//GEN-LAST:event_RoleComboxBoxPropertyChange
 
     /**
      * @param args the command line arguments

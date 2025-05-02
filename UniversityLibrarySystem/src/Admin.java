@@ -75,41 +75,30 @@ public class Admin {
     }
     
     public boolean login(){
-        try {
-            // Create connection using DBManager
-            Connection connection = DBManager.openCon();
-            
-            // Prepare SQL query to check admin credentials
-            String query = "SELECT * FROM ADMIN WHERE EMAIL = ? AND PASSWORD = ?";
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, email);
-            stmt.setString(2, password);
-            
-            // Execute query and check results
-            ResultSet rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                // Login successful, update admin info from database
-                userID = rs.getInt("ID");
-                name = rs.getString("NAME");
-                status = AdminController.Status.valueOf(rs.getString("STATUS"));
-                
-                // Close resources
-                rs.close();
-                stmt.close();
-                DBManager.closeCon(connection);
-                return true;
-            }
-            
-            // Close resources
-            rs.close();
-            stmt.close();
-            DBManager.closeCon(connection);
-            return false;
-            
-        } catch (SQLException e) {
-            System.out.println("Database error during admin login: " + e.getMessage());
+        Connection conn = DBManager.openCon();
+        if (conn == null) {
             return false;
         }
+
+        String query = "SELECT * FROM ADMIN WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
+        System.out.println("q: " + query);
+        try {
+            ResultSet res = DBManager.query(conn, query);
+            if (res != null && res.next()) {
+                this.setUserID(res.getInt("ID"));
+                this.setName(res.getString("NAME"));
+                this.setEmail(res.getString("EMAIL"));
+                this.setPassword(res.getString("PASSWORD"));
+                Boolean f = res.getBoolean("STATUS");
+                this.setStatus(f==true?AdminController.Status.ACTIVE:AdminController.Status.DISABLED);
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Login Error: " + ex.getMessage());
+        } finally {
+            DBManager.closeCon(conn);
+        }
+
+        return false;
     }
 }

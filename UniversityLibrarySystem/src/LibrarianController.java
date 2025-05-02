@@ -33,15 +33,13 @@ public class LibrarianController {
         this.librarian = new Librarian(this.userID, this.name, this.email, this.password, this.role, this.status);
     }
     
-    // Constructor for login credentials
     public LibrarianController(String email, String password) {
         this.email = email;
         this.password = password;
         this.role = "librarian";
-        // Other fields will be populated from database if login is successful
+        this.librarian = new Librarian(0, null, email, password, null, null);
     }
     
-    // Full parameterized constructor
     public LibrarianController(int userID, String name, String email, String password, Status status) {
         this.userID = userID;
         this.name = name;
@@ -52,7 +50,6 @@ public class LibrarianController {
         this.librarian = new Librarian(this.userID, this.name, this.email, this.password, this.role, this.status);
     }
     
-    // Method to handle login
     public boolean login() {
         return librarian.login();
     }

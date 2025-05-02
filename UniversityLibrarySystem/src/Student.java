@@ -26,10 +26,10 @@ public class Student extends User {
             return false;
         }
 
-        String q = "SELECT * FROM STUDENT WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
-        System.out.println("q: " + q);
+        String query = "SELECT * FROM STUDENT WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
+        System.out.println("q: " + query);
         try {
-            ResultSet res = DBManager.query(conn, q);
+            ResultSet res = DBManager.query(conn, query);
             if (res != null && res.next()) {
                 this.setUserID(res.getInt("ID"));
                 this.setName(res.getString("NAME"));

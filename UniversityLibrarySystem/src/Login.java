@@ -307,7 +307,7 @@ public class Login extends javax.swing.JFrame {
                 AdminController admin = new AdminController(email, password);
                 if (admin.login()) {
                     this.dispose();
-                    //new AdminView(admin).setVisible(true); // Uncomment when AdminView is ready
+                    new AdminView().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid admin credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
@@ -317,7 +317,7 @@ public class Login extends javax.swing.JFrame {
                 LibrarianController librarian = new LibrarianController(email, password);
                 if (librarian.login()) {
                     this.dispose();
-                    //new LibrarianView(librarian).setVisible(true); // Uncomment when LibrarianView is ready
+                    new LibrarianView().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid librarian credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }

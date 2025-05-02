@@ -75,41 +75,66 @@ public class Librarian {
     }
     
     public boolean login(){
-        try {
-            // Create connection using DBManager
-            Connection connection = DBManager.openCon();
-            
-            // Prepare SQL query to check librarian credentials
-            String query = "SELECT * FROM LIBRARIAN WHERE EMAIL = ? AND PASSWORD = ?";
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, email);
-            stmt.setString(2, password);
-            
-            // Execute query and check results
-            ResultSet rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                // Login successful, update librarian info from database
-                userID = rs.getInt("ID");
-                name = rs.getString("NAME");
-                status = LibrarianController.Status.valueOf(rs.getString("STATUS"));
-                
-                // Close resources
-                rs.close();
-                stmt.close();
-                DBManager.closeCon(connection);
-                return true;
-            }
-            
-            // Close resources
-            rs.close();
-            stmt.close();
-            DBManager.closeCon(connection);
-            return false;
-            
-        } catch (SQLException e) {
-            System.out.println("Database error during librarian login: " + e.getMessage());
+        Connection conn = DBManager.openCon();
+        if (conn == null) {
             return false;
         }
+
+        String query = "SELECT * FROM LIBRARIAN WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
+        System.out.println("q: " + query);
+        try {
+            ResultSet res = DBManager.query(conn, query);
+            if (res != null && res.next()) {
+                this.setUserID(res.getInt("ID"));
+                this.setName(res.getString("NAME"));
+                this.setEmail(res.getString("EMAIL"));
+                this.setPassword(res.getString("PASSWORD"));
+                Boolean f = res.getBoolean("STATUS");
+                this.setStatus(f==true?LibrarianController.Status.ACTIVE:LibrarianController.Status.DISABLED);
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Login Error: " + ex.getMessage());
+        } finally {
+            DBManager.closeCon(conn);
+        }
+
+        return false;
+//        try {
+//            // Create connection using DBManager
+//            Connection connection = DBManager.openCon();
+//            
+//            // Prepare SQL query to check librarian credentials
+//            String query = "SELECT * FROM LIBRARIAN WHERE EMAIL = ? AND PASSWORD = ?";
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.setString(1, email);
+//            stmt.setString(2, password);
+//            
+//            // Execute query and check results
+//            ResultSet rs = stmt.executeQuery();
+//            
+//            if (rs.next()) {
+//                // Login successful, update librarian info from database
+//                userID = rs.getInt("ID");
+//                name = rs.getString("NAME");
+//                status = LibrarianController.Status.valueOf(rs.getString("STATUS"));
+//                
+//                // Close resources
+//                rs.close();
+//                stmt.close();
+//                DBManager.closeCon(connection);
+//                return true;
+//            }
+//            
+//            // Close resources
+//            rs.close();
+//            stmt.close();
+//            DBManager.closeCon(connection);
+//            return false;
+//            
+//        } catch (SQLException e) {
+//            System.out.println("Database error during librarian login: " + e.getMessage());
+//            return false;
+//        }
     }
 }

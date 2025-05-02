@@ -38,6 +38,7 @@ public class AdminController {
         this.email = email;
         this.password = password;
         this.role = "admin";
+        this.admin = new Admin(0, null, email, password, null, null);
         // Other fields will be populated from database if login is successful
     }
     
@@ -52,7 +53,6 @@ public class AdminController {
         this.admin = new Admin(this.userID, this.name, this.email, this.password, this.role, this.status);
     }
     
-    // Method to handle login
     public boolean login() {
         return admin.login();
     }

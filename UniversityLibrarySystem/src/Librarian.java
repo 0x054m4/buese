@@ -1,3 +1,8 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author omarh
@@ -70,6 +75,41 @@ public class Librarian {
     }
     
     public boolean login(){
-        
+        try {
+            // Create connection using DBManager
+            Connection connection = DBManager.openCon();
+            
+            // Prepare SQL query to check librarian credentials
+            String query = "SELECT * FROM LIBRARIAN WHERE EMAIL = ? AND PASSWORD = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+            
+            // Execute query and check results
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                // Login successful, update librarian info from database
+                userID = rs.getInt("ID");
+                name = rs.getString("NAME");
+                status = LibrarianController.Status.valueOf(rs.getString("STATUS"));
+                
+                // Close resources
+                rs.close();
+                stmt.close();
+                DBManager.closeCon(connection);
+                return true;
+            }
+            
+            // Close resources
+            rs.close();
+            stmt.close();
+            DBManager.closeCon(connection);
+            return false;
+            
+        } catch (SQLException e) {
+            System.out.println("Database error during librarian login: " + e.getMessage());
+            return false;
+        }
     }
 }

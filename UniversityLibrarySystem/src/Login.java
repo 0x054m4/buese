@@ -1,7 +1,10 @@
-
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -279,45 +282,49 @@ public class Login extends javax.swing.JFrame {
 
 
     private void StudentloginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentloginbtnActionPerformed
-        String selectedAction = (String) RoleComboxBox.getSelectedItem();
-        switch (selectedAction) {
+        String email = StudentLoginEmailField.getText();
+        String password = new String(StudenPasswordLoginField.getPassword());
+        
+        // Validate input fields
+        if (email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter both email and password", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        String selectedRole = (String) RoleComboxBox.getSelectedItem();
+        switch (selectedRole) {
             case "Student":
-                char[] passwordChars = StudenPasswordLoginField.getPassword(); // from JPasswordField
-                String s = new String(passwordChars);
-                System.out.println("Login email: " + StudentLoginEmailField.getText());
-                System.out.println("Password: " + s); // for debugging only
-
-                StudentController student = new StudentController(StudentLoginEmailField.getText(), s);
+                StudentController student = new StudentController(email, password);
                 if (student.login()) {
                     this.dispose();
                     new StudentView().setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Invalid email or password");
+                    JOptionPane.showMessageDialog(this, "Invalid student credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
                 break;
 
             case "Admin":
-                AdminController admin = new AdminController(StudentLoginEmailField.getText(), StudenPasswordLoginField.getText());
+                AdminController admin = new AdminController(email, password);
                 if (admin.login()) {
                     this.dispose();
-                    //new AdminView(admin).setVisible(true);
+                    //new AdminView(admin).setVisible(true); // Uncomment when AdminView is ready
                 } else {
-                    JOptionPane.showMessageDialog(this, "Invalid email or password");
+                    JOptionPane.showMessageDialog(this, "Invalid admin credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
                 break;
 
             case "Librarian":
-                LibrarianController librarian = new LibrarianController(StudentLoginEmailField.getText(), StudenPasswordLoginField.getText());
+                LibrarianController librarian = new LibrarianController(email, password);
                 if (librarian.login()) {
                     this.dispose();
-                    //new LibrarianView(librarian).setVisible(true);
+                    //new LibrarianView(librarian).setVisible(true); // Uncomment when LibrarianView is ready
                 } else {
-                    JOptionPane.showMessageDialog(this, "Invalid email or password");
+                    JOptionPane.showMessageDialog(this, "Invalid librarian credentials", "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
                 break;
 
             default:
-                JOptionPane.showMessageDialog(this, "Please select a Role");
+                JOptionPane.showMessageDialog(this, "Please select a user type", "Selection Required", JOptionPane.WARNING_MESSAGE);
                 break;
         }
     }//GEN-LAST:event_StudentloginbtnActionPerformed

@@ -84,6 +84,15 @@ public class Login extends javax.swing.JFrame {
 
         RoleComboxBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select User Type...", "Student", "Librarian", "Admin" }));
         RoleComboxBox.setBorder(null);
+        RoleComboxBox.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                RoleComboxBoxPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         RoleComboxBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RoleComboxBoxActionPerformed(evt);
@@ -177,6 +186,8 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel5.setVisible(false);
+
         jLabel5.setText("Don't have an account?");
 
         SignUpLink.setBackground(new java.awt.Color(204, 255, 255));
@@ -236,7 +247,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,14 +282,19 @@ public class Login extends javax.swing.JFrame {
         String selectedAction = (String) RoleComboxBox.getSelectedItem();
         switch (selectedAction) {
             case "Student":
-                StudentController student = new StudentController(StudentLoginEmailField.getText(), StudenPasswordLoginField.getText());
+                char[] passwordChars = StudenPasswordLoginField.getPassword(); // from JPasswordField
+                String s = new String(passwordChars);
+                System.out.println("Login email: " + StudentLoginEmailField.getText());
+                System.out.println("Password: " + s); // for debugging only
+
+                StudentController student = new StudentController(StudentLoginEmailField.getText(), s);
                 if (student.login()) {
                     this.dispose();
                     new StudentView().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid email or password");
                 }
-                break; // Added missing break
+                break;
 
             case "Admin":
                 AdminController admin = new AdminController(StudentLoginEmailField.getText(), StudenPasswordLoginField.getText());
@@ -316,14 +332,18 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_RoleComboxBoxActionPerformed
 
     private void RoleComboxBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_RoleComboxBoxPropertyChange
+
+    }//GEN-LAST:event_RoleComboxBoxPropertyChange
+
+    private void RoleComboxBoxPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_RoleComboxBoxPopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
         String selectedAction = (String) RoleComboxBox.getSelectedItem();
         if (selectedAction == "Student") {
             jPanel5.setVisible(true);
         } else {
             jPanel5.setVisible(false);
         }
-
-    }//GEN-LAST:event_RoleComboxBoxPropertyChange
+    }//GEN-LAST:event_RoleComboxBoxPopupMenuWillBecomeInvisible
 
     /**
      * @param args the command line arguments

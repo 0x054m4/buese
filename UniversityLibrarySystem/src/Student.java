@@ -1,43 +1,53 @@
-import java.util.ArrayList;
-import java.sql.Connection; 
-import java.sql.DriverManager; 
-import java.sql.ResultSet; 
-import java.sql.SQLException; 
-import java.sql.Statement; 
 
-public class Student extends User{
+import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Student extends User {
+
     private ArrayList<Borrow> borrowList;
 
     public Student(int userID) {
         super(userID);
         this.borrowList = new ArrayList<Borrow>();
-    } 
- 
+    }
+
     public Student(String name, String email, String password, String role, UserStatus.Status status, ArrayList<Borrow> borrowList) {
         super(name, email, password, role, status);
         this.borrowList = borrowList;
     }
 
-    public boolean login(){
-        String q = "SELECT * FROM STUDENT WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
-        final ResultSet res = DBManager.query(q);
-        if(res != null) {
-            try {
-                if (res.next()) {
-                    this.setUserID(res.getInt("ID"));
-                    this.setName(res.getString("NAME"));
-                    this.setEmail(res.getString("EMAIL"));
-                    this.setPassword(res.getString("PASSWORD"));
-                    this.setStatus(UserStatus.Status.valueOf(res.getString("STATUS")));
-                    return true;
-                }
-            } catch (SQLException ex) {
-                System.out.println("Error: " + ex.getMessage());
-            }
+    public boolean login() {
+        Connection conn = DBManager.openCon();
+        if (conn == null) {
+            return false;
         }
+
+        String q = "SELECT * FROM STUDENT WHERE EMAIL = '" + this.getEmail() + "' AND PASSWORD = '" + this.getPassword() + "'";
+        System.out.println("q: " + q);
+        try {
+            ResultSet res = DBManager.query(conn, q);
+            if (res != null && res.next()) {
+                this.setUserID(res.getInt("ID"));
+                this.setName(res.getString("NAME"));
+                this.setEmail(res.getString("EMAIL"));
+                this.setPassword(res.getString("PASSWORD"));
+                Boolean f = res.getBoolean("STATUS");
+                this.setStatus(f==true?UserStatus.Status.ACTIVE:UserStatus.Status.DISABLED);
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Login Error: " + ex.getMessage());
+        } finally {
+            DBManager.closeCon(conn);
+        }
+
         return false;
     }
-    
+
     public void setBorrowList(ArrayList<Borrow> borrowList) {
         this.borrowList = borrowList;
     }
@@ -45,7 +55,7 @@ public class Student extends User{
     public ArrayList<Borrow> getBorrowList() {
         return borrowList;
     }
-    
+
     public boolean signUp(String name, String email, String password) {
         String connectionURL = "jdbc:derby://localhost:1527/group51";
         try {
@@ -55,7 +65,7 @@ public class Student extends User{
             ResultSet rs = st.executeQuery(currID);
             int nextID = Integer.parseInt(currID);
             String sql = String.format("INSERT INTO STUDENT (ID, NAME, EMAIL, PASSWORD, STATUS)"
-                    + " VALUES ('%d', '%s', '%s', '%s', TRUE)", 
+                    + " VALUES ('%d', '%s', '%s', '%s', TRUE)",
                     nextID, name, email, password);
             st.executeUpdate(sql);
             st.close();
@@ -65,5 +75,5 @@ public class Student extends User{
             System.out.println("Connect failed ! " + ex.getMessage());
             return false;
         }
-    }    
+    }
 }

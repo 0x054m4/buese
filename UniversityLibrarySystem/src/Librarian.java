@@ -68,4 +68,8 @@ public class Librarian {
     public void setStatus(LibrarianController.Status status) {
         this.status = status;
     }
+    
+    public boolean login(){
+        
+    }
 }

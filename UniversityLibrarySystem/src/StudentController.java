@@ -36,7 +36,7 @@ public class StudentController{
     public StudentController(String email, String password) {
         this.email = email;
         this.password = password;
-        this.student = new Student(email, password, null, null, null, null);
+        this.student = new Student(null, email, password, null, null, null);
     }
     public boolean login() {
         return student.login();

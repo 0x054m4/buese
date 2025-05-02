@@ -54,8 +54,6 @@ public class LibrarianController {
     
     // Method to handle login
     public boolean login() {
-        // Implement database authentication logic here
-        // For now, return true for testing
-        return true;
+        return librarian.login();
     }
 }

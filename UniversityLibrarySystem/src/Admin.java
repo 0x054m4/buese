@@ -68,4 +68,8 @@ public class Admin {
     public void setStatus(AdminController.Status status) {
         this.status = status;
     }
+    
+    public boolean login(){
+        
+    }
 }
